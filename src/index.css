@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 4%;
+    --foreground: 210 15% 90%;
+
+    --card: 220 18% 8%;
+    --card-foreground: 210 15% 90%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 15% 90%;
+
+    --primary: 165 82% 46%;
+    --primary-foreground: 220 30% 6%;
+
+    --secondary: 220 15% 14%;
+    --secondary-foreground: 210 15% 80%;
+
+    --muted: 220 15% 12%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 190 90% 50%;
+    --accent-foreground: 220 30% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 16%;
+    --input: 220 15% 18%;
+    --ring: 165 82% 46%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 210 15% 90%;
+    --sidebar-primary: 165 82% 46%;
+    --sidebar-primary-foreground: 220 30% 6%;
+    --sidebar-accent: 220 15% 12%;
+    --sidebar-accent-foreground: 210 15% 90%;
+    --sidebar-border: 220 15% 16%;
+    --sidebar-ring: 165 82% 46%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer components {
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(165 82% 46%), hsl(190 90% 55%));
+  }
+
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50 rounded-xl;
+  }
+
+  .glow-box {
+    box-shadow: 0 0 30px hsl(165 82% 46% / 0.08), 0 0 60px hsl(165 82% 46% / 0.04);
+  }
+
+  .section-padding {
+    @apply py-20 md:py-28 lg:py-32 px-4 sm:px-6 md:px-8;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold font-display tracking-tight text-foreground;
+  }
+
+  .section-subtitle {
+    @apply text-muted-foreground text-base md:text-lg lg:text-xl max-w-2xl;
+  }
+
+  .badge-skill {
+    @apply px-4 py-2 rounded-lg bg-secondary border border-border/50 text-secondary-foreground text-sm font-medium
+    transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_15px_hsl(165_82%_46%/0.1)];
+  }
+
+  .card-project {
+    @apply glass-card overflow-hidden transition-all duration-500
+    hover:border-primary/30 hover:shadow-[0_0_40px_hsl(165_82%_46%/0.08)] hover:-translate-y-1;
+  }
+
+  .card-service {
+    @apply glass-card p-6 md:p-8 transition-all duration-500
+    hover:border-primary/30 hover:shadow-[0_0_40px_hsl(165_82%_46%/0.08)] hover:-translate-y-1;
+  }
+
+  .nav-link {
+    @apply text-muted-foreground hover:text-foreground transition-colors duration-200 text-sm font-medium
+    relative after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5
+    after:bottom-[-4px] after:left-0 after:bg-primary after:origin-bottom-right
+    after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+}
+
+@layer utilities {
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+  }
+}

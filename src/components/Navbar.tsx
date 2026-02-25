@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
+
 const navLinks = [
   { label: "Sobre", href: "sobre" },
   { label: "Skills", href: "skills" },
@@ -62,7 +63,8 @@ const Navbar = () => {
           }}
           className="font-display font-bold text-lg md:text-xl text-foreground hover:text-primary transition-colors"
         >
-          &lt;Dev /&gt;
+          <img src="" alt="Logo" />
+
         </button>
 
         {/* Desktop Nav */}

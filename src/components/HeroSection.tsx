@@ -3,8 +3,8 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/seuusuario", label: "GitHub" },
-  { icon: Linkedin, href: "https://linkedin.com/in/seuusuario", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/Gabriel-asAlonso", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/gasalonso/", label: "LinkedIn" },
   { icon: MessageCircle, href: "https://wa.me/5511999999999", label: "WhatsApp" },
   { icon: Mail, href: "mailto:seuemail@email.com", label: "E-mail" },
 ];

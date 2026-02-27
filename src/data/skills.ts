@@ -13,11 +13,11 @@ export const skillCategories: SkillCategory[] = [
   {
     title: "Back-end & Dados",
     icon: "Database",
-    skills: ["Node.js", "Express", "MySQL", "PostgreSQL", "REST APIs", "Redis"],
+    skills: ["Node.js", "MySQL"],
   },
   {
     title: "Ferramentas & DevOps",
     icon: "Wrench",
-    skills: ["Git", "GitHub", "Docker", "Linux", "VS Code", "Figma"],
+    skills: ["Git", "GitHub"],
   },
 ];

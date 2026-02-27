@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { useNavigate, useLocation } from "react-router-dom";
 
-
 const navLinks = [
   { label: "Sobre", href: "sobre" },
   { label: "Skills", href: "skills" },
@@ -54,21 +53,18 @@ const Navbar = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 md:h-18 flex items-center justify-between">
-        {/* Logo */}
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 h-16 md:h-18 flex items-center">
         <button
           onClick={() => {
             navigate("/");
             window.scrollTo({ top: 0, behavior: "smooth" });
           }}
-          className="font-display font-bold text-lg md:text-xl text-foreground hover:text-primary transition-colors"
+          className="flex items-center shrink-0"
         >
-          <img src="" alt="Logo" />
-
+          <img src="/logoPortfolio.png" alt="Logo" className="w-[70px] h-[70px]" />
         </button>
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex flex-1 justify-center items-center gap-8">
           {navLinks.map((link) => (
             <button
               key={link.href}
@@ -80,17 +76,17 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          className="md:hidden p-2 text-foreground hover:text-primary transition-colors"
-          aria-label="Toggle menu"
-        >
-          {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
+        <div className="flex items-center justify-end flex-1 md:hidden">
+          <button
+            onClick={() => setIsMobileOpen(!isMobileOpen)}
+            className="p-2 text-foreground hover:text-primary transition-colors"
+            aria-label="Toggle menu"
+          >
+            {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
       </nav>
 
-      {/* Mobile Menu */}
       {isMobileOpen && (
         <div className="md:hidden fixed inset-0 top-16 bg-background/95 backdrop-blur-2xl z-40 animate-fade-up">
           <div className="flex flex-col items-center justify-center gap-8 pt-20">

@@ -11,6 +11,8 @@ const ContactSection = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  const mensagem = encodeURIComponent("Olá, tudo bem? Vim pelo site e gostaria de conversar sobre um possível projeto.");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -107,7 +109,7 @@ const ContactSection = () => {
           <AnimatedSection className="lg:col-span-2" delay={0.2}>
             <div className="space-y-5 h-full flex flex-col justify-center">
               <a
-                href="https://wa.me/5511999999999"
+                href={`https://wa.me/5511993365729?text=${mensagem}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="card-service flex items-center gap-4 group"

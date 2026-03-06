@@ -2,16 +2,19 @@ import { Github, Linkedin, Mail, MessageCircle, ArrowDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 
+const mensagem = encodeURIComponent("Olá, tudo bem? Vim pelo site e gostaria de conversar sobre um possível projeto.");
+
 const socialLinks = [
   { icon: Github, href: "https://github.com/Gabriel-asAlonso", label: "GitHub" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/gasalonso/", label: "LinkedIn" },
-  { icon: MessageCircle, href: "https://wa.me/5511999999999", label: "WhatsApp" },
+  { icon: MessageCircle, href:`https://wa.me/5511993365729?text=${mensagem}`, label: "WhatsApp" },
   { icon: Mail, href: "mailto:seuemail@email.com", label: "E-mail" },
 ];
 
 const HeroSection = () => {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+
   };
 
   return (

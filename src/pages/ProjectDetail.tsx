@@ -10,6 +10,8 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const project = projects.find((p) => p.slug === slug);
 
+  const mensagem = encodeURIComponent("Olá, tudo bem? Vim pelo site e gostaria de conversar sobre um possível projeto.");
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -233,7 +235,7 @@ const ProjectDetail = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Button variant="glow" size="xl" asChild>
-                <a href="https://wa.me/5511999999999" target="_blank" rel="noopener noreferrer">
+                <a href={`https://wa.me/5511993365729?text=${mensagem}`} target="_blank" rel="noopener noreferrer">
                   <MessageCircle size={16} />
                   Falar no WhatsApp
                 </a>
